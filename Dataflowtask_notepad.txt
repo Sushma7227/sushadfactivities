@@ -1,0 +1,69 @@
+Pipeline? ()
+
+data flow - Task
+Task: Data flows:
+Pre-req:
+1. Create ADF Service
+2. Create a datalake storage acc. 
+a. rawinput ----- Course.csv
+b.rawoutput
+
+Step1: 
+Create dataset(container) for raw input-- 
+Provided below details:
+Create new linked service and name it.
+No changes at Integration run time and Authentication type.
+Use your own subscription and also map to correct storage account (Datalake) finally test the connection.
+Followed by create linked services, need map to directories correctly.
+for path : location of the file 
+
+Step2:
+Create dataset for rawoutput.
+Provided below details:
+Create new linked service and name it.
+No changes at Integration run time and Authentication type.
+Use your own subscription and also map to correct storage account (Datalake) finally test the connection.
+Followed by create linked services, need map to directories correctly.
+for path : location of the file 
+
+Step3:
+Create a dataflow.  
+
+1.Click on Add source so that you can map all the data from raw input data lake .
+: SOurce settings-- Map correctly your dataset : Rawinputdatalake
+2. Enable Data flow debug so that it will help you to see option Data preview.
+3. Before doing Transformation, please validate the from
+Data Preview .
+
+For Next steps:
+click on add + button, map to derived column and provide the name of the output stream as 'TitleExtraction'.
+=
+Click Expression builder, 
+ColumnName: Title
+Expression 
+length(CourseTitle)
+== 
+Save and Refresh the option to see in Data preview before you click save and finish.
+
+==
+Last option, Click +, add sink option 
+To Sink just need to add Dataset as Output - rawoutput.
+Test the connection.
+
+Step4:
+
+Create a pipeline 
+
+Map to Pipelines-- Create New pipeline
+
+As soon as you click new pipeline, you will activties window.
+Inside Move and Transform, use the option DATAFLOW.
+Drag and drop in pipeline console.
+
+Inside, Settings option , Map to Data flow and give name data flow which you created in the step3.
+
+
+Finally, Validate this pipeline, ensure you have no errors.
+Debug the pipeline at the end.
+
+

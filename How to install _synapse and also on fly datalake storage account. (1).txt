@@ -1,0 +1,21 @@
+Install Synapse - Analytics 
+options for storage:
+On fly you can create storage account 
+Create file system 
+Upload the datasets in to datalake storage account.
+======================
+Basic:
+Subscription: Free tier
+Resource group: any rg or create rg
+Manged resource : provide any name.
+Name of the workspace: Azsynapse1209 - pick any name
+Region: East US or any region
+Datalake: Cick create datalake 
+filesystem: give name of the container as Raw
+
+Security: use local and Azure AD option.
+sqladminuser
+S1lsi1o
+
+Next, there are no changes to proceed and review and create it.
+
